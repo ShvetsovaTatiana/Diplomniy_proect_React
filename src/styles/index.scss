@@ -1,0 +1,291 @@
+@import '_vars';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $colorWhite;
+  font-family: Lato, sans-serif;
+  line-height: normal;
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.background_top {
+  background-color: #F1E4E6;
+}
+
+.top__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 63px;
+}
+
+.top_content_block {
+  display: flex;
+  gap: 16px;
+}
+
+.title {
+  color: #222;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.subtitle {
+  color: $colorBlack;
+  font-weight: 700;
+
+  &_col {
+    color: $colorSelectSitePink;
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.contents {
+  padding-top: 65px;
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 30px;
+}
+
+.image_container {
+  position: relative;
+  overflow: hidden;
+
+  &_big {
+    position: relative;
+    overflow: hidden;
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+}
+
+.content_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 22, 22, 0.70);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_text {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+
+  &_next {
+    text-align: center;
+    color: $colorSelectSitePink;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &_next:hover {
+    color: #d84c5f;
+  }
+}
+
+.sections {
+  padding-top: 96px;
+}
+
+.section_title {
+  margin-bottom: 6px;
+  color: $colorBlack;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.section_subtitle {
+  margin-bottom: 48px;
+  color: #9F9F9F;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 30px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.item_btn {
+  margin-top: 48px;
+  margin-bottom: 94px;
+  padding: 15px 39px;
+  background-color: transparent;
+  color: #F26376;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  border: 2px solid #FF6A6A;
+
+  &:hover {
+    background-color: $colorSelectSitePink;
+    color: $colorWhite;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .top__content {
+    gap: 39px;
+  }
+
+  .top_photo {
+    width: 385px;
+  }
+
+  .rectangle_img {
+    width: 12px;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+
+    &_col {
+      font-size: 24px;
+    }
+  }
+
+  .contents {
+    grid-template-columns: repeat(3, 231px);
+    gap: 19px;
+  }
+
+  .sections {
+    padding-top: 109px;
+  }
+
+  .section_title {
+    margin-bottom: 3px;
+
+    &_subtitle {
+      margin-bottom: 72px;
+    }
+  }
+
+  .items {
+    grid-template-columns: repeat(2, 360px);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 767px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .top_content_block {
+    margin-top: 151px;
+    margin-bottom: 152px;
+  }
+
+  .top_content_block img {
+    width: 12px;
+    height: 70px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .subtitle,
+  .subtitle_col {
+    font-size: 20px;
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .image_container {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    & img {
+      width: 100%;
+    }
+
+    &_big img {
+      grid-column: auto;
+      grid-row: auto;
+      width: 200%;
+      max-width: none;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      transform: translateX(-25%);
+    }
+  }
+
+  .sections {
+    padding-top: 64px;
+
+    &_title {
+      margin-bottom: 3px;
+    }
+
+    &_subtitle {
+      margin-bottom: 64px;
+    }
+  }
+
+  .items {
+    grid-template-columns: repeat(1, 360px);
+    gap: 16px;
+  }
+}

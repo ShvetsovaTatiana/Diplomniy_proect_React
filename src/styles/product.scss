@@ -1,0 +1,270 @@
+@import '_vars';
+
+.top {
+  overflow: hidden;
+}
+
+.background_head {
+  position: relative;
+  background-color: $colorBlack;
+  width: 100%;
+}
+
+.top-head {
+  background-color: #F8F3F4;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    font-weight: 400;
+    font-size: 24px;
+    color: $colorSelectSitePink;
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+
+  &_box:last-child .breadcrumbs__link {
+    font-size: 14px;
+    font-weight: 700;
+    color: $colorSelectSitePink;
+  }
+
+  &_box:not(:last-child)::after {
+    content: '/';
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #636363;
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 14px;
+    color: #636363;
+
+    &:hover {
+      color: $colorSelectSitePink;
+    }
+  }
+}
+
+.carousel_background {
+  background-color: $colorBackground;
+  padding-top: 11px;
+  padding-bottom: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_arrow {
+    width: 47px;
+    height: 47px;
+  }
+
+  &_photo {
+    width: 597px;
+  }
+}
+
+.carousel_description {
+  margin-top: -45px !important;
+  text-align: center;
+  border: 3px solid $colorBackground;
+  background-color: #FFF;
+
+  &_h2 {
+    padding-top: 64px;
+    padding-bottom: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $colorSelectSitePink;
+  }
+
+  &_h1 {
+    padding-top: 12px;
+    padding-bottom: 48px;
+    color: #4D4D4D;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &_p {
+    color: #5E5E5E;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &_p_price {
+    padding-top: 32px;
+    padding-bottom: 65px;
+    color: $colorSelectSitePink;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &_a {
+    padding-top: 65px;
+    padding-bottom: 48px;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+  }
+
+  &_a_color {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #6F6E6E;
+  }
+
+  &_btn {
+    color: #F26376;
+    padding-bottom: 64px;
+    width: 212px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+  }
+
+  &_btn a {
+    color: #F26376;
+    padding: 12px 30px;
+    border: 2px solid #FF6A6A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 23px;
+  }
+
+  &_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_text_btn {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &_btn a:hover {
+    background-color: #F16D7F;
+  }
+
+  &_btn a:hover .carousel_description_text_btn {
+    background-color: #F16D7F;
+    color: #FFF;
+  }
+
+  &_btn a:hover path {
+    fill: #FFF;
+  }
+}
+
+.items__space {
+  margin-top: 128px !important;
+  margin-bottom: 128px !important;
+}
+
+
+@media (max-width: 1024px) {
+  .carousel_background {
+    &_photo {
+      width: 466px;
+    }
+  }
+
+  .item_last {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .sing_up,
+  .basket {
+    display: none;
+  }
+
+  .top-head {
+    padding-top: 24px;
+    padding-bottom: 46px;
+
+    &-flex {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+
+  .carousel_background {
+    &_arrow {
+      width: 31px;
+      height: 31px;
+    }
+
+    &_photo {
+      width: 374px;
+    }
+  }
+
+  .carousel_description {
+    margin-top: 0;
+
+    &_h1 {
+      padding-top: 12px;
+      padding-bottom: 31px;
+    }
+
+    &_p_price {
+      padding-top: 32px;
+      padding-bottom: 31px;
+
+      &_svg {
+        width: 175px;
+      }
+    }
+
+    &_a {
+      padding-top: 49px;
+      padding-bottom: 64px;
+      font-size: 10px;
+      gap: 25px;
+    }
+  }
+
+  .item {
+    &_second {
+      display: none;
+    }
+
+    &_last {
+      display: inherit;
+    }
+
+    &_cart img {
+      width: 26px;
+    }
+
+    &_product {
+      width: 100%;
+    }
+
+    &_btn {
+      margin-top: 55px;
+    }
+  }
+}
